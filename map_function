@@ -1,0 +1,51 @@
+#include<iostream>
+#include<map>
+#include<cstring>
+#include<cstdio>
+using namespace std;
+typedef map <int, string> mydata;
+mydata stu;
+int main() {
+	int n;
+	cin>>n;
+	//map中的元素是自动按Key升序排序，所以不能对map用sort函数
+	/*
+	用insert函数插入数据,当map中有这个关键字时,insert操作是插入数据不了的，
+	但是用数组方式就不同了,它可以覆盖以前该关键字对应的值，
+	for(int i = 0;i < n;++i) {
+		string s;
+		cin>>s;
+		stu.insert(pair<int, string>(i,s));
+	}
+	*/
+	for(int i = 0;i < n;++i) {
+		char s[100];
+		int a;
+		scanf("%s",s);
+		cin>>a;
+		stu[a] = s;	
+	}
+	//mydata::iterator it = stu.find(1); //清除完，空间还在 
+	//stu.erase(it);
+	return 0; 
+	int length = stu.size();
+	cout<<length<<endl;
+	
+	mydata::iterator it1 = stu.begin() ;//遍历 
+	for(it1; it1 != stu.end() ;++it1) {
+		cout<<it1->first<<" "<<it1->second<<endl;
+	}
+	//stu.clear() ;  //全部清除
+	
+	/*  
+	int findid = 2;
+	mydata::iterator it = stu.find(findid);//查找 
+	if(it == stu.end() ) {
+		cout<<"error"<<endl;
+	} else {
+		cout<<it->first<<" "<<it->second<<endl;
+		cout<<"yes"<<endl;
+	}
+	*/
+	return 0; 
+}
