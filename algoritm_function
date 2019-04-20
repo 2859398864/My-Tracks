@@ -1,1 +1,43 @@
 
+对于这两个算法，它们所查找的序列都必须是有序的 (返回值是下标的地址)
+
+upper_bound(a,  a + n,  num)  : 在前两个参数定义的范围内查找大于第三个参数的第一个元素
+
+lower_bound(a, a + n,  num)   : 在前两个参数指定的范围内查找不小于第三个参数的第一个元素
+
+二分查找求上界的函数 : 
+
+		当 v 存在时返回它最后出现的下一个位置。如果不存在，返回这样一个下标i ：在此处插入 v后数列仍然有序 
+
+    int up_bound(int *A, int x, int y, int v)
+    {
+        int m;
+        while(x < y)
+        { 
+            m = x + (y-x)/2;
+            if(A[m] <= v)
+                x = m+1;
+            else
+                y = m;
+        }
+        return x;
+    }
+
+二分查找求下界的函数：
+
+　　　　当 v 存在时返回它出现的第一个位置。如果不存在，返回这样一个下标i：在此处插入 v后数列仍然有序。
+
+    int low_bound(int *A, int x, int y, int v)
+    {
+        int m;
+        while(x < y)
+        {
+            m = x + (y-x)/2;
+            if(A[m] >= v)
+                y = m;
+            else
+                x = m+1;
+        }
+        return x;
+    }
+
