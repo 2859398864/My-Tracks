@@ -1,0 +1,28 @@
+#include<iostream>
+#include<set>
+using namespace std;
+int main() {
+	//不允许重复 
+	//键和值是同一个元素 
+	set<int> s;
+	s.insert(1);
+	s.insert(3);
+	s.insert(6);
+	//s.erase(6);  //删除 
+	//s.size();
+	//s.clear();
+	set<int>::iterator it; //定义前向迭代器
+	for(it = s.begin(); it != s.end(); it++)  cout << *it << " ";
+	
+	cout << endl;
+	
+	set<int>::reverse_iterator rit; //定义反向迭代器
+	for(rit = s.rbegin(); rit != s.rend(); rit++) cout << *rit << " ";
+	
+	set<int>::iterator it;
+	it = s.find(6); //查找键值为6的元素
+	if(it != s.end())  cout << *it << endl;
+		
+
+	return 0;
+}
