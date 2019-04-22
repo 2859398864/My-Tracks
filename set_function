@@ -1,28 +1,37 @@
-#include<iostream>
+//（1）正常
 #include<set>
-using namespace std;
-int main() {
-	//不允许重复 
-	//键和值是同一个元素 
+	//不允许重复 键和值是同一个元素 
 	set<int> s;
-	s.insert(1);
-	s.insert(3);
 	s.insert(6);
 	//s.erase(6);  //删除 
-	//s.size();
-	//s.clear();
+	//s.size();  s.clear();
 	set<int>::iterator it; //定义前向迭代器
 	for(it = s.begin(); it != s.end(); it++)  cout << *it << " ";
 	
-	cout << endl;
-	
 	set<int>::reverse_iterator rit; //定义反向迭代器
 	for(rit = s.rbegin(); rit != s.rend(); rit++) cout << *rit << " ";
-	
+
 	set<int>::iterator it;
 	it = s.find(6); //查找键值为6的元素
-	if(it != s.end())  cout << *it << endl;
-		
-
-	return 0;
-}
+	if(it != s.end())  cout << *it << endl;	
+/*
+struct cmp { //自定义比较函数
+	bool operator() (const int &a, const int &b) { //从大到小 
+		if(a != b) return a > b;
+		else       return a > b;
+	}
+};
+set<int, cmp> num; 
+*/
+struct stu {   //（3）结构体
+	int math;
+	double score;
+	bool operator < (const stu &a) const {
+		if(a.math == math)  return a.score < score;   //按第一关键字：数学 由大到小 
+		return a.math < math;
+	}
+};
+set<stu> s;    stu a;
+a.math = 1;    a.score = 2;   s.insert(a);  
+set<stu>::iterator it;
+cout << (*it).math << " " << (*it).score << endl; 
