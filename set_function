@@ -12,6 +12,10 @@ int main() {
 	//s.erase(6);  //删除 
 	//s.size();
 	//s.clear();
+	//s.empty();
+	// STL中区间是左闭右开，end()函数返回迭代器即指向集合中最大元素下一位置迭代器
+        //--s.end()最大元素迭代器
+        //最大值 ： maxn = *(--s.end());
 	set<int>::iterator it; //定义前向迭代器
 	for(it = s.begin(); it != s.end(); it++)  cout << *it << " ";
 	
