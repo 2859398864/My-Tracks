@@ -45,13 +45,13 @@ using namespace std;
 struct stu {
 	int math;
 	double score;
-	bool operator < (const stu &a) const {
-		if(a.math == math) {    //按第一关键字：数学 由大到小 
-			return a.score < score;
-		}
-		return a.math < math;
-	}
 };
+bool operator < (const stu &a, const stu &b) {
+		if(a.math == b.math) {    //按第一关键字：数学 由大到小 
+			return a.score > b.score;
+		}
+		return a.math > b.math;
+}
 int main() {
 	set<stu> s;
 	stu a;
