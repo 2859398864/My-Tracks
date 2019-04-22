@@ -31,6 +31,7 @@ int main() {
 	
 	//stu.clear() ; 
 	//stu.size();
+	//stu.empty();
 	
 	mydata::reverse_iterator rit; //定义反向迭代器
 	for(rit = stu.rbegin(); rit != stu.rend(); rit++) 
