@@ -25,28 +25,28 @@ int main() {
 		cin>>a;
 		stu[a] = s;	
 	}
-	//mydata::iterator it = stu.find(1); 
+	
+	//mydata::iterator it = stu.find(1); //删除 
 	//stu.erase(it);
 	
+	//stu.clear() ; 
+	//stu.size();
 	
-	int length = stu.size();
-	cout<<length<<endl;
+	mydata::reverse_iterator rit; //定义反向迭代器
+	for(rit = stu.rbegin(); rit != stu.rend(); rit++) 
+		cout<<rit->first<<" "<<rit->second<<endl;
 	
-	mydata::iterator it1 = stu.begin() ;//遍历 
+	cout<<endl;
+	
+	mydata::iterator it1 = stu.begin() ;////定义前向迭代器
 	for(it1; it1 != stu.end() ;++it1) {
 		cout<<it1->first<<" "<<it1->second<<endl;
 	}
-	//stu.clear() ;  //全部清除
 	
-	/*  
 	int findid = 2;
-	mydata::iterator it = stu.find(findid);//查找 
-	if(it == stu.end() ) {
-		cout<<"error"<<endl;
-	} else {
+	mydata::iterator it = stu.find(findid);//查找键值为2的元素
+	if(it != stu.end() ) 
 		cout<<it->first<<" "<<it->second<<endl;
-		cout<<"yes"<<endl;
-	}
-	*/
+	
 	return 0; 
 }
