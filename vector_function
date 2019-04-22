@@ -1,0 +1,41 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+
+int main() {
+	/* 二维数组 
+	vector<vector<int> > a;
+	a.resize(m);//行数为m
+	for(int i=0;i<m;i++)//每行列数为n
+    	a[i].resize(n);
+    	
+
+    */
+	vector<int> v1;//   创建一个空vector容器
+	vector<int> v2(10);  //创建一个有10个空元素的vector容器
+	vector<int> v3(10,0); //创建一个有10个元素的vector容器，并赋值为0；
+	//使用时加上  *   迭代器法遍历
+	//下标遍历
+	
+	vector<int> v4(10,0); 
+	
+	
+	
+	/*
+	v4.clear()
+	v4.empty()
+	v4.erase(iter)
+	v4.erase(beg,end)//删除beg end区间的数据
+	v4.front()//传回第一个数据
+	v4.insert(iter,elem)
+	v4.pop_back()//删除最后一个数据
+	v4.push_back(elem)//在尾部加入一个数据
+	v4.resize(num)//改容器的大小
+	v4.size()
+	v4.begin()
+	v4.end()
+	*/
+	
+	return 0;
+}
