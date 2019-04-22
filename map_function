@@ -27,7 +27,8 @@ int main() {
 	}
 	//mydata::iterator it = stu.find(1); //清除完，空间还在 
 	//stu.erase(it);
-	return 0; 
+	
+	
 	int length = stu.size();
 	cout<<length<<endl;
 	
